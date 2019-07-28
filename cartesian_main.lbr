@@ -941,6 +941,8 @@
 <pin name="GND" x="-5.08" y="10.16" length="middle"/>
 <pin name="SHIELD2" x="-5.08" y="5.08" length="middle"/>
 <pin name="SHIELD" x="-5.08" y="2.54" length="middle"/>
+<text x="0" y="22.86" size="1.778" layer="95">&gt;NAME</text>
+<text x="0" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
