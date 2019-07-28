@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -64,7 +64,7 @@
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
@@ -930,6 +930,18 @@
 <pin name="1" x="-10.16" y="0" visible="pad" length="short" direction="pas"/>
 <pin name="2" x="10.16" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
 </symbol>
+<symbol name="USB_2.0_CONNECTOR">
+<wire x1="0" y1="0" x2="17.78" y2="0" width="0.1524" layer="94"/>
+<wire x1="17.78" y1="0" x2="17.78" y2="20.32" width="0.1524" layer="94"/>
+<wire x1="17.78" y1="20.32" x2="0" y2="20.32" width="0.1524" layer="94"/>
+<wire x1="0" y1="20.32" x2="0" y2="0" width="0.1524" layer="94"/>
+<pin name="USB_5V" x="-5.08" y="17.78" length="middle"/>
+<pin name="D+" x="-5.08" y="15.24" length="middle"/>
+<pin name="D-" x="-5.08" y="12.7" length="middle"/>
+<pin name="GND" x="-5.08" y="10.16" length="middle"/>
+<pin name="SHIELD2" x="-5.08" y="5.08" length="middle"/>
+<pin name="SHIELD" x="-5.08" y="2.54" length="middle"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="ATMEGA2560-16AU" prefix="U">
@@ -1183,10 +1195,20 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/esd122.pdf"&gt; Datasheet &
 </devices>
 </deviceset>
 <deviceset name="USB-B1HSW6">
+<description>http://www.on-shore.com/wp-content/uploads/USB-B1HSXX.pdf</description>
 <gates>
+<gate name="G$1" symbol="USB_2.0_CONNECTOR" x="-10.16" y="-7.62"/>
 </gates>
 <devices>
 <device name="" package="USB-B1HSW6">
+<connects>
+<connect gate="G$1" pin="D+" pad="P$3"/>
+<connect gate="G$1" pin="D-" pad="P$2"/>
+<connect gate="G$1" pin="GND" pad="P$4"/>
+<connect gate="G$1" pin="SHIELD" pad="M1"/>
+<connect gate="G$1" pin="SHIELD2" pad="M2"/>
+<connect gate="G$1" pin="USB_5V" pad="P$1"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
