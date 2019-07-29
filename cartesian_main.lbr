@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -728,6 +728,20 @@
 <wire x1="12.0904" y1="2.5146" x2="12.0904" y2="6.35" width="0.1524" layer="21"/>
 <wire x1="12.0904" y1="6.35" x2="0" y2="6.35" width="0.1524" layer="21"/>
 </package>
+<package name="WE_649004113322">
+<pad name="P$3" x="0" y="0" drill="0.6" diameter="1.4" shape="square"/>
+<pad name="P$4" x="4.2" y="0" drill="0.6" diameter="1.4" shape="square"/>
+<pad name="P$2" x="4.2" y="4.2" drill="0.6" diameter="1.4" shape="square"/>
+<pad name="P$1" x="0" y="4.2" drill="0.6" diameter="1.4" shape="square"/>
+<wire x1="-2.75" y1="-2.55" x2="-2.75" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-2.75" y1="-2.54" x2="-2.75" y2="7.05" width="0.127" layer="21"/>
+<wire x1="-2.75" y1="-2.54" x2="6.95" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="6.95" y1="-2.54" x2="6.95" y2="7.05" width="0.127" layer="21"/>
+<wire x1="-2.75" y1="7.05" x2="6.95" y2="7.05" width="0.127" layer="21"/>
+<wire x1="0.635" y1="7.112" x2="0.635" y2="8.128" width="0.127" layer="21"/>
+<wire x1="0.635" y1="8.128" x2="3.429" y2="8.128" width="0.127" layer="21"/>
+<wire x1="3.429" y1="8.128" x2="3.429" y2="7.112" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ATMEGA2560-16AU">
@@ -943,6 +957,18 @@
 <pin name="SHIELD" x="-5.08" y="2.54" length="middle"/>
 <text x="0" y="22.86" size="1.778" layer="95">&gt;NAME</text>
 <text x="0" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="4PIN">
+<pin name="P$1" x="-15.24" y="7.62" length="middle"/>
+<pin name="P$2" x="-15.24" y="5.08" length="middle"/>
+<pin name="P$3" x="-15.24" y="2.54" length="middle"/>
+<pin name="P$4" x="-15.24" y="0" length="middle"/>
+<wire x1="-10.16" y1="10.16" x2="-10.16" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="10.16" width="0.254" layer="94"/>
+<wire x1="2.54" y1="10.16" x2="-10.16" y2="10.16" width="0.254" layer="94"/>
+<text x="-10.16" y="10.668" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1210,6 +1236,24 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/esd122.pdf"&gt; Datasheet &
 <connect gate="G$1" pin="SHIELD" pad="M1"/>
 <connect gate="G$1" pin="SHIELD2" pad="M2"/>
 <connect gate="G$1" pin="USB_5V" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="WE_649004113322">
+<gates>
+<gate name="G$1" symbol="4PIN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="WE_649004113322">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+<connect gate="G$1" pin="P$4" pad="P$4"/>
 </connects>
 <technologies>
 <technology name=""/>
